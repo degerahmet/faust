@@ -124,7 +124,7 @@ class Collection(Service, CollectionT):
         on_window_close: Optional[WindowCloseCallback] = None,
         is_global: bool = False,
         synchronize_all_active_partitions: bool = False,
-        value_serializer: Optional[CodecArg] = None,  # Add this line
+        value_serializer: Optional[CodecArg] = None,
         **kwargs: Any,
     ) -> None:
         Service.__init__(self, loop=app.loop, **kwargs)
@@ -158,7 +158,7 @@ class Collection(Service, CollectionT):
         # Possible values json and raw
         # Fallback to json
         self.key_serializer = self._serializer_from_type(self.key_type)
-        self.value_serializer = value_serializer  # Add this line
+        self.value_serializer = value_serializer
 
         # Table key expiration
         self._partition_timestamp_keys = defaultdict(set)
@@ -200,7 +200,7 @@ class Collection(Service, CollectionT):
             table_name=self.name,
             key_type=self.key_type,
             key_serializer=self.key_serializer,
-            value_serializer=self.value_serializer,  # Add this line
+            value_serializer=self.value_serializer,
             value_type=self.value_type,
             loop=self.loop,
             options=self.options,

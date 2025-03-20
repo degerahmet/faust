@@ -1138,7 +1138,7 @@ class App(AppT, Service):
         window: Optional[WindowT] = None,
         partitions: Optional[int] = None,
         help: Optional[str] = None,
-        value_serializer: str = None,  # Add this line
+        value_serializer: str = None,
         **kwargs: Any,
     ) -> TableT:
         """Define new table.
@@ -1170,7 +1170,7 @@ class App(AppT, Service):
                     beacon=self.tables.beacon,
                     partitions=partitions,
                     help=help,
-                    value_serializer=value_serializer,  # Add this line
+                    value_serializer=value_serializer,
                     **kwargs,
                 ),
             )
